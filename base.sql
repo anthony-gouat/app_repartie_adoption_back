@@ -26,6 +26,7 @@ CREATE TABLE ANIMAL (
     age INT NOT NULL,
     idRace INT NOT NULL,
     idType INT NOT NULL,
+    adopter boolean not null,
     PRIMARY KEY(idanimal),
     FOREIGN KEY (idrace) REFERENCES RACE(idrace),
     FOREIGN KEY (idtype) REFERENCES TYPE(idtype)

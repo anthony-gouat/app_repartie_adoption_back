@@ -17,8 +17,8 @@ INSERT INTO COULEUR(libelleCouleur) VALUES ("Roux");
 INSERT INTO TYPE(libelleType) VALUES("Chien");
 INSERT INTO TYPE(libelleType) VALUES("Chat");
 
-INSERT INTO ANIMAL(nomAnimal, age, idRace, idType) VALUES ("Snoopy", 7, 2, 1);
-INSERT INTO ANIMAL(nomAnimal, age, idRace, idType) VALUES ("Symba", 4, 7, 2);
+INSERT INTO ANIMAL(nomAnimal, age, idRace, idType, adopter) VALUES ("Snoopy", 7, 2, 1, false);
+INSERT INTO ANIMAL(nomAnimal, age, idRace, idType, adopter) VALUES ("Symba", 4, 7, 2, false);
 
 INSERT INTO COULEURS VALUES (1, 2);
 INSERT INTO COULEURS VALUES (2, 4);
