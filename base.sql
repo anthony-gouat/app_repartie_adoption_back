@@ -10,13 +10,13 @@ CREATE TABLE COULEUR ( -- Référencie toutes les couleurs des animaux
 
 CREATE TABLE RACE ( -- Race d'un animal (Bouldog/Persan/...)
     idRace INT NOT NULL AUTO_INCREMENT,
-    libelleRace VARCHAR(10) NOT NULL,
+    libelleRace VARCHAR(50) NOT NULL,
     PRIMARY KEY(idrace)
 );
 
 CREATE TABLE TYPE ( -- Type d'un animal (chien/chat/...)
     idType INT NOT NULL AUTO_INCREMENT,
-    libelleType VARCHAR(10) NOT NULL,
+    libelleType VARCHAR(50) NOT NULL,
     PRIMARY KEY (idtype)
 );
 
@@ -43,18 +43,19 @@ CREATE TABLE UTILISATEUR (
     idUtil INT NOT NULL AUTO_INCREMENT,
     nomUtil VARCHAR(10) NOT NULL,
     prenomUtil VARCHAR(10) NOT NULL,
-    mail VARCHAR(20) NOT NULL,
+    mail VARCHAR(50) NOT NULL,
     mdp VARCHAR(20) NOT NULL,
-    role VARCHAR(10) NOT NULL,
+    role VARCHAR(30) NOT NULL,
     token VARCHAR(30),
     oputh VARCHAR(10),
     PRIMARY KEY(idutil)
-),
+);
 
 CREATE TABLE TAG( -- Référencie les tags
     idTag INT NOT NULL AUTO_INCREMENT,
-    libTag VARCHAR(50) NOT NULL
-),
+    libTag VARCHAR(50) NOT NULL,
+    primary KEY(idTag)
+);
 
 CREATE TABLE TAGS( -- Référencie tout les tags pour chaque animal
     idTag INT NOT NULL,
@@ -62,15 +63,15 @@ CREATE TABLE TAGS( -- Référencie tout les tags pour chaque animal
     PRIMARY KEY(idTag, idAnimal),
     FOREIGN KEY (idTag) REFERENCES TAG(idTag),
     FOREIGN KEY (idAnimal) REFERENCES ANIMAL(idAnimal)
-),
+);
 
 CREATE TABLE COMMENTAIRE(
     idCommentaire INT NOT NULL AUTO_INCREMENT,
     idUtil INT NOT NULL,
-    contenuComm TEXTE NOT NULL,
+    contenuComm text NOT NULL,
     PRIMARY KEY (idCommentaire),
     FOREIGN KEY (idUtil) REFERENCES UTILISATEUR(idUtil)
-),
+);
 
 CREATE TABLE COMMENTER( -- Référencie tout les commentaires pour un animal
     idCommentaire INT NOT NULL,
@@ -78,4 +79,4 @@ CREATE TABLE COMMENTER( -- Référencie tout les commentaires pour un animal
     PRIMARY KEY(idCommentaire, idAnimal),
     FOREIGN KEY (idCommentaire) REFERENCES COMMENTAIRE(idCommentaire),
     FOREIGN KEY (idAnimal) REFERENCES ANIMAL(idAnimal)
-)
+);

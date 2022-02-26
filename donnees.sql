@@ -20,8 +20,8 @@ INSERT INTO TYPE(libelleType) VALUES("Chat");
 INSERT INTO ANIMAL(nomAnimal, age, idRace, idType) VALUES ("Snoopy", 7, 2, 1);
 INSERT INTO ANIMAL(nomAnimal, age, idRace, idType) VALUES ("Symba", 4, 7, 2);
 
-INSERT INTO COULEUR VALUES (1, 2);
-INSERT INTO COULEUR VALUES (2, 4);
+INSERT INTO COULEURS VALUES (1, 2);
+INSERT INTO COULEURS VALUES (2, 4);
 
 INSERT INTO UTILISATEUR(nomUtil, prenomUtil, mail, mdp, role) VALUES ("MEYER", "Maxime", "maxime.meyer@test.fr", "test", "Administrateur");
 INSERT INTO UTILISATEUR(nomUtil, prenomUtil, mail, mdp, role) VALUES ("GOUAT", "Anthony", "anthony.gouat@test.fr", "test", "Administrateur");
