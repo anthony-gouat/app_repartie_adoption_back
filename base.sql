@@ -69,9 +69,12 @@ CREATE TABLE TAGS( -- Référencie tout les tags pour chaque animal
 CREATE TABLE COMMENTAIRE(
     idCommentaire INT NOT NULL AUTO_INCREMENT,
     idUtil INT NOT NULL,
+    idReponse INT,
     contenuComm text NOT NULL,
+    date DATE,
     PRIMARY KEY (idCommentaire),
-    FOREIGN KEY (idUtil) REFERENCES UTILISATEUR(idUtil)
+    FOREIGN KEY (idUtil) REFERENCES UTILISATEUR(idUtil),
+    FOREIGN KEY (idReponse) REFERENCES COMMENTAIRE(idCommentaire)
 );
 
 CREATE TABLE COMMENTER( -- Référencie tout les commentaires pour un animal

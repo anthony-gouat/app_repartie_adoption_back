@@ -13,7 +13,7 @@ public class Couleurs {
 
     @Id
     private int idAnimal;
-    @Id
+    //@Id
     private int idCouleur;
 
     public int getIdAnimal() {

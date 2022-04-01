@@ -14,7 +14,7 @@ public class Commenter {
 
     @Id
     private int idCommentaire;
-    @Id
+    //@Id
     private int idUtil;
 
     public int getIdCommentaire() {

@@ -5,6 +5,7 @@ import org.springframework.data.relational.core.mapping.Table;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.util.Date;
 
 @Data
 @Entity
@@ -17,6 +18,26 @@ public class Commentaire {
     private int idUtil;
 
     private String contenuComm;
+
+    private Date date;
+
+    private int idReponse;
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public int getIdReponse() {
+        return idReponse;
+    }
+
+    public void setIdReponse(int idReponse) {
+        this.idReponse = idReponse;
+    }
 
     public int getIdCommentaire() {
         return idCommentaire;
