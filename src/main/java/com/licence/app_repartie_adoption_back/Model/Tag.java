@@ -10,7 +10,26 @@ import javax.persistence.Id;
 @Entity
 @Table(name = "tag")
 public class Tag {
+
     @Id
     private int idTag;
     private String libTag;
+
+    public int getIdTag() {
+        return idTag;
+    }
+
+    public void setIdTag(int idTag) {
+        this.idTag = idTag;
+    }
+
+    public String getLibTag() {
+        return libTag;
+    }
+
+    public void setLibTag(String libTag) {
+        this.libTag = libTag;
+    }
+
+
 }

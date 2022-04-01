@@ -10,8 +10,27 @@ import javax.persistence.Id;
 @Entity
 @Table(name = "couleurs")
 public class Couleurs {
+
     @Id
     private int idAnimal;
     @Id
     private int idCouleur;
+
+    public int getIdAnimal() {
+        return idAnimal;
+    }
+
+    public void setIdAnimal(int idAnimal) {
+        this.idAnimal = idAnimal;
+    }
+
+    public int getIdCouleur() {
+        return idCouleur;
+    }
+
+    public void setIdCouleur(int idCouleur) {
+        this.idCouleur = idCouleur;
+    }
+
+
 }

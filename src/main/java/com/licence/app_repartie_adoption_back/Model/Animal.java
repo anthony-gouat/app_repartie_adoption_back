@@ -11,6 +11,7 @@ import javax.persistence.Id;
 @Entity
 @Table(name = "animal")
 public class Animal {
+
     @Id
     private int idAnimal;
 
@@ -23,4 +24,52 @@ public class Animal {
     private int idType;
 
     private boolean adopter;
+
+    public int getIdAnimal() {
+        return idAnimal;
+    }
+
+    public void setIdAnimal(int idAnimal) {
+        this.idAnimal = idAnimal;
+    }
+
+    public String getNomAnimal() {
+        return nomAnimal;
+    }
+
+    public void setNomAnimal(String nomAnimal) {
+        this.nomAnimal = nomAnimal;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public int getIdRace() {
+        return idRace;
+    }
+
+    public void setIdRace(int idRace) {
+        this.idRace = idRace;
+    }
+
+    public int getIdType() {
+        return idType;
+    }
+
+    public void setIdType(int idType) {
+        this.idType = idType;
+    }
+
+    public boolean isAdopter() {
+        return adopter;
+    }
+
+    public void setAdopter(boolean adopter) {
+        this.adopter = adopter;
+    }
 }

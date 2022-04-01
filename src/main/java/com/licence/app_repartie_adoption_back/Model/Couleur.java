@@ -14,4 +14,20 @@ public class Couleur {
     private int idCouleur;
 
     private String libelleCouleur;
+
+    public int getIdCouleur() {
+        return idCouleur;
+    }
+
+    public void setIdCouleur(int idCouleur) {
+        this.idCouleur = idCouleur;
+    }
+
+    public String getLibelleCouleur() {
+        return libelleCouleur;
+    }
+
+    public void setLibelleCouleur(String libelleCouleur) {
+        this.libelleCouleur = libelleCouleur;
+    }
 }

@@ -10,7 +10,26 @@ import javax.persistence.Id;
 @Entity
 @Table(name = "race")
 public class Race {
+
     @Id
     private int idRace;
     private String libelleRace;
+
+    public int getIdRace() {
+        return idRace;
+    }
+
+    public void setIdRace(int idRace) {
+        this.idRace = idRace;
+    }
+
+    public String getLibelleRace() {
+        return libelleRace;
+    }
+
+    public void setLibelleRace(String libelleRace) {
+        this.libelleRace = libelleRace;
+    }
+
+
 }

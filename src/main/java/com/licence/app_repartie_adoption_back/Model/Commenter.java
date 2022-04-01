@@ -16,4 +16,22 @@ public class Commenter {
     private int idCommentaire;
     @Id
     private int idUtil;
+
+    public int getIdCommentaire() {
+        return idCommentaire;
+    }
+
+    public void setIdCommentaire(int idCommentaire) {
+        this.idCommentaire = idCommentaire;
+    }
+
+    public int getIdUtil() {
+        return idUtil;
+    }
+
+    public void setIdUtil(int idUtil) {
+        this.idUtil = idUtil;
+    }
+
+
 }

@@ -12,4 +12,22 @@ public class Tags {
     @Id
     private int idTag;
     private int idAnimal;
+
+    public int getIdTag() {
+        return idTag;
+    }
+
+    public void setIdTag(int idTag) {
+        this.idTag = idTag;
+    }
+
+    public int getIdAnimal() {
+        return idAnimal;
+    }
+
+    public void setIdAnimal(int idAnimal) {
+        this.idAnimal = idAnimal;
+    }
+
+
 }
