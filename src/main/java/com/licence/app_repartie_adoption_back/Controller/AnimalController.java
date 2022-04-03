@@ -1,9 +1,7 @@
 package com.licence.app_repartie_adoption_back.Controller;
 
 import com.licence.app_repartie_adoption_back.Model.Animal;
-import com.licence.app_repartie_adoption_back.Model.Couleur;
 import com.licence.app_repartie_adoption_back.Repository.AnimalRepository;
-import com.licence.app_repartie_adoption_back.Repository.CouleurRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -11,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -24,7 +23,7 @@ public class AnimalController {
      * Apelle de la liste des animaux stockées en base de données
      * @return la liste des tout les animaux
      */
-    @GetMapping("/")
+    @GetMapping
     public List<Animal> getAllAnimaux() {
         return (List<Animal>) ar.findAll();
     }
@@ -51,7 +50,7 @@ public class AnimalController {
      */
     @GetMapping("/type/{idType}")
     public List<Animal> getAnimauxByType(@PathVariable(value = "idType") long idType) {
-        List<Animal> lesAnimaux = null;
+        ArrayList<Animal> lesAnimaux = new ArrayList<Animal>();
         for (Animal unA:getAllAnimaux()) {
             if(unA.getIdType() == idType) {
                 lesAnimaux.add(unA);
@@ -67,7 +66,7 @@ public class AnimalController {
      */
     @GetMapping("/race/{idRace}")
     public List<Animal> getAnimauxByRace(@PathVariable(value = "idRace") long idRace) {
-        List<Animal> lesAnimaux = null;
+        ArrayList<Animal> lesAnimaux = new ArrayList<Animal>();
         for (Animal unA:getAllAnimaux()) {
             if(unA.getIdRace() == idRace) {
                 lesAnimaux.add(unA);
@@ -83,7 +82,7 @@ public class AnimalController {
      */
     @GetMapping("/age/{age}")
     public List<Animal> getAnimauxByAge(@PathVariable(value = "age") long age) {
-        List<Animal> lesAnimaux = null;
+        ArrayList<Animal> lesAnimaux = new ArrayList<Animal>();
         for (Animal unA:getAllAnimaux()) {
             if(unA.getAge() == age) {
                 lesAnimaux.add(unA);
@@ -121,15 +120,17 @@ public class AnimalController {
                 animal1.setNomAnimal(animal.getNomAnimal());
             }
             if (animal.getAge() != 0) {
-                animal1.setAge(animal.getAge());
+                animal1.setAge((int) animal.getAge());
             }
             if (animal.getIdRace() != 0) {
-                animal1.setIdRace(animal.getIdRace());
+                animal1.setIdRace((int) animal.getIdRace());
             }
             if (animal.getIdType() != 0) {
-                animal1.setIdType(animal.getIdType());
+                animal1.setIdType((int) animal.getIdType());
             }
-            animal1.setAdopter(animal.isAdopter());
+            if (animal.getAdopter() != 0) {
+                animal1.setAdopter(animal.getAdopter());
+            }
             return ar.save(animal1);
         }
         response.setStatus(404);

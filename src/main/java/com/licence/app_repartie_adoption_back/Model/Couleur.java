@@ -11,11 +11,11 @@ import javax.persistence.Id;
 @Table(name = "couleur")
 public class Couleur {
     @Id
-    private int idCouleur;
+    private long idCouleur;
 
     private String libelleCouleur;
 
-    public int getIdCouleur() {
+    public long getIdCouleur() {
         return idCouleur;
     }
 

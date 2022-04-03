@@ -24,7 +24,7 @@ public class CouleurController {
      * Récupération de la liste des couleurs
      * @return une liste de couleur
      */
-    @GetMapping("/")
+    @GetMapping
     public List<Couleur> getAllCouleur() {
         return (List<Couleur>) cr.findAll();
     }

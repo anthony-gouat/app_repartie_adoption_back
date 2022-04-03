@@ -7,25 +7,31 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-@Data
 @Entity
-@Table(name = "animal")
+@javax.persistence.Table(name = "animal")
+@Table
 public class Animal {
 
     @Id
-    private int idAnimal;
+    @Column(name = "id_animal", nullable = false)
+    private long idAnimal;
 
+    @Column(name = "nom_animal", nullable = false)
     private String nomAnimal;
 
-    private int age;
+    @Column(name = "age", nullable = false)
+    private long age;
 
-    private int idRace;
+    @Column(name = "id_race", nullable = false)
+    private long idRace;
 
-    private int idType;
+    @Column(name = "id_type", nullable = false)
+    private long idType;
 
-    private boolean adopter;
+    @Column(name = "adopter", nullable = false)
+    private long adopter;
 
-    public int getIdAnimal() {
+    public long getIdAnimal() {
         return idAnimal;
     }
 
@@ -41,7 +47,7 @@ public class Animal {
         this.nomAnimal = nomAnimal;
     }
 
-    public int getAge() {
+    public long getAge() {
         return age;
     }
 
@@ -49,7 +55,7 @@ public class Animal {
         this.age = age;
     }
 
-    public int getIdRace() {
+    public long getIdRace() {
         return idRace;
     }
 
@@ -57,7 +63,7 @@ public class Animal {
         this.idRace = idRace;
     }
 
-    public int getIdType() {
+    public long getIdType() {
         return idType;
     }
 
@@ -65,11 +71,11 @@ public class Animal {
         this.idType = idType;
     }
 
-    public boolean isAdopter() {
+    public long getAdopter() {
         return adopter;
     }
 
-    public void setAdopter(boolean adopter) {
+    public void setAdopter(long adopter) {
         this.adopter = adopter;
     }
 }

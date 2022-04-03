@@ -13,15 +13,17 @@ import java.util.Date;
 public class Commentaire {
 
     @Id
-    private int idCommentaire;
+    private long idCommentaire;
 
-    private int idUtil;
+    private long idUtil;
 
     private String contenuComm;
 
     private Date date;
 
-    private int idReponse;
+
+
+    private Long idReponse;
 
     public Date getDate() {
         return date;
@@ -31,15 +33,11 @@ public class Commentaire {
         this.date = date;
     }
 
-    public int getIdReponse() {
+    public Long getIdReponse() {
         return idReponse;
     }
 
-    public void setIdReponse(int idReponse) {
-        this.idReponse = idReponse;
-    }
-
-    public int getIdCommentaire() {
+    public long getIdCommentaire() {
         return idCommentaire;
     }
 
@@ -47,7 +45,7 @@ public class Commentaire {
         this.idCommentaire = idCommentaire;
     }
 
-    public int getIdUtil() {
+    public long getIdUtil() {
         return idUtil;
     }
 
@@ -61,5 +59,9 @@ public class Commentaire {
 
     public void setContenuComm(String contenuComm) {
         this.contenuComm = contenuComm;
+    }
+
+    public void setIdReponse(Long idReponse) {
+        this.idReponse = idReponse;
     }
 }
