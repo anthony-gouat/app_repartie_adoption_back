@@ -47,12 +47,12 @@ public class CommenterController {
 
     /**
      * Supprime un commentaire
-     * @param id_commentaire
-     * @param id_recette
+     * @param idCommentaire
+     * @param idAnimal
      */
-    @DeleteMapping("/delete/{id_commentaire}/{id_recette}")
-    public void deleteCommentaire(@PathVariable(value = "id_commentaire") long id_commentaire,@PathVariable(value = "id_recette") long id_recette){
-        CommenterId id = new CommenterId(id_commentaire,id_recette);
+    @DeleteMapping("/delete/{idCommentaire}/{idAnimal}")
+    public void deleteCommentaire(@PathVariable(value = "idCommentaire") long idCommentaire,@PathVariable(value = "idAnimal") long idAnimal){
+        CommenterId id = new CommenterId(idCommentaire,idAnimal);
         cr.deleteById(id);
     }
 }

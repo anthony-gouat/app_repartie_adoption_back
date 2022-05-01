@@ -10,4 +10,8 @@ public class CouleursId implements Serializable {
         this.idCouleur = idCouleur;
         this.idAnimal = idAnimal;
     }
+
+    public CouleursId() {
+
+    }
 }
