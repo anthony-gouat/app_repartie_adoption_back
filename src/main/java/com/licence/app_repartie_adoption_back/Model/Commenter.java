@@ -14,11 +14,11 @@ import javax.persistence.*;
 public class Commenter {
 
     @Id
-    //@Column(name = "id_commentaire", nullable = false)
+    @Column(name = "id_commentaire", nullable = false)
     private Long idCommentaire;
 
     @Id
-    //@Column(name = "id_animal", nullable = false)
+    @Column(name = "id_animal", nullable = false)
     private Long idAnimal;
 
 

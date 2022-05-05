@@ -3,8 +3,7 @@ package com.licence.app_repartie_adoption_back.Model;
 import lombok.Data;
 import org.springframework.data.relational.core.mapping.Table;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 @Data
@@ -13,16 +12,21 @@ import java.util.Date;
 public class Commentaire {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_commentaire", nullable = false)
     private long idCommentaire;
 
+    @Column(name = "id_util", nullable = false)
     private long idUtil;
 
+    @Lob
+    @Column(name = "contenu_comm", nullable = false)
     private String contenuComm;
 
+    @Column(name = "date")
     private Date date;
 
-
-
+    @Column(name = "id_reponse")
     private Long idReponse;
 
     public Date getDate() {

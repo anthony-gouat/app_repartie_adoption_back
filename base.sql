@@ -26,7 +26,7 @@ CREATE TABLE ANIMAL (
     age INT NOT NULL,
     id_race INT NOT NULL,
     id_type INT NOT NULL,
-    adopter INT not null,
+    adopter BOOLEAN not null,
     PRIMARY KEY(id_animal),
     FOREIGN KEY (id_race) REFERENCES RACE(id_race),
     FOREIGN KEY (id_type) REFERENCES TYPE(id_type)
@@ -42,12 +42,11 @@ CREATE TABLE COULEURS ( -- Référencie toutes les couleurs d'un animal
 
 CREATE TABLE UTILISATEUR (
     id_util INT NOT NULL AUTO_INCREMENT,
-    nom_util VARCHAR(10) NOT NULL,
-    prenom_util VARCHAR(10) NOT NULL,
+    nom_util VARCHAR(20) NOT NULL,
+    prenom_util VARCHAR(20) NOT NULL,
     mail VARCHAR(50) NOT NULL,
     mdp VARCHAR(20) NOT NULL,
     role VARCHAR(30) NOT NULL,
-    token VARCHAR(30),
     oputh VARCHAR(10),
     PRIMARY KEY(id_util)
 );
@@ -83,4 +82,18 @@ CREATE TABLE COMMENTER( -- Référencie tout les commentaires pour un animal
     PRIMARY KEY(id_commentaire, id_animal),
     FOREIGN KEY (id_commentaire) REFERENCES COMMENTAIRE(id_commentaire),
     FOREIGN KEY (id_animal) REFERENCES ANIMAL(id_animal)
+);
+
+CREATE TABLE IMAGE( -- Référencie les images
+    id_img INT NOT NULL AUTO_INCREMENT,
+    lien TEXT NOT NULL,
+    primary KEY(id_img)
+);
+
+CREATE TABLE IMAGES( -- Référencie toutes les images pour chaque animal
+   id_img INT NOT NULL,
+   id_animal INT NOT NULL,
+   PRIMARY KEY(id_img, id_animal),
+   FOREIGN KEY (id_img) REFERENCES IMAGE(id_img),
+   FOREIGN KEY (id_animal) REFERENCES ANIMAL(id_animal)
 );

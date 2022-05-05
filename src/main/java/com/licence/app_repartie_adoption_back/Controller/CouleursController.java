@@ -46,5 +46,17 @@ public class CouleursController {
     public Couleurs addCouleurs(@Validated @RequestBody Couleurs couleurs) {
         return cr.save(couleurs);
     }
+
+    /**
+     * Supprime une couleur lié à un animal
+     * @param idAnimal
+     * @param idCouleur
+     */
+
+    @DeleteMapping("/{idAnimal}/{idCouleur}")
+    public void deleteCouleurs(@PathVariable(value = "idAnimal") long idAnimal, @PathVariable(value = "idCouleur") long idCouleur) {
+        CouleursId id = new CouleursId(idCouleur, idAnimal);
+        cr.deleteById(id);
+    }
 }
 

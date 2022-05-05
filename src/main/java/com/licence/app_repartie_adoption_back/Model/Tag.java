@@ -3,8 +3,7 @@ package com.licence.app_repartie_adoption_back.Model;
 import lombok.Data;
 import org.springframework.data.relational.core.mapping.Table;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Data
 @Entity
@@ -12,14 +11,18 @@ import javax.persistence.Id;
 public class Tag {
 
     @Id
-    private int idTag;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_tag", nullable = false)
+    private long idTag;
+
+    @Column(name = "lib_tag", nullable = false, length = 50)
     private String libTag;
 
-    public int getIdTag() {
+    public long getIdTag() {
         return idTag;
     }
 
-    public void setIdTag(int idTag) {
+    public void setIdTag(long idTag) {
         this.idTag = idTag;
     }
 

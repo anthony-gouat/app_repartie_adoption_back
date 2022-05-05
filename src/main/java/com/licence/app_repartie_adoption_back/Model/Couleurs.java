@@ -4,6 +4,7 @@ import com.licence.app_repartie_adoption_back.CouleursId;
 import lombok.Data;
 import org.springframework.data.relational.core.mapping.Table;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
@@ -15,9 +16,11 @@ import javax.persistence.IdClass;
 public class Couleurs {
 
     @Id
+    @Column(name = "id_animal", nullable = false)
     private Long idAnimal;
 
     @Id
+    @Column(name = "id_couleur", nullable = false)
     private Long idCouleur;
 
     public Long getIdAnimal() {

@@ -3,9 +3,7 @@ package com.licence.app_repartie_adoption_back.Model;
 import lombok.Data;
 import org.springframework.data.relational.core.mapping.Table;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @javax.persistence.Table(name = "animal")
@@ -13,6 +11,7 @@ import javax.persistence.Id;
 public class Animal {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_animal", nullable = false)
     private long idAnimal;
 
@@ -29,7 +28,7 @@ public class Animal {
     private long idType;
 
     @Column(name = "adopter", nullable = false)
-    private long adopter;
+    private boolean adopter;
 
     public long getIdAnimal() {
         return idAnimal;
@@ -71,11 +70,11 @@ public class Animal {
         this.idType = idType;
     }
 
-    public long getAdopter() {
+    public boolean getAdopter() {
         return adopter;
     }
 
-    public void setAdopter(long adopter) {
+    public void setAdopter(boolean adopter) {
         this.adopter = adopter;
     }
 }

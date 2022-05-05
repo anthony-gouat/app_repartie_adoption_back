@@ -128,13 +128,12 @@ public class AnimalController {
             if (animal.getIdType() != 0) {
                 animal1.setIdType((int) animal.getIdType());
             }
-            if (animal.getAdopter() != 0) {
-                animal1.setAdopter(animal.getAdopter());
-            }
+            animal1.setAdopter(animal.getAdopter());
+
             return ar.save(animal1);
         }
         response.setStatus(404);
-        response.getWriter().write("Animal inconnue");
+        response.getWriter().write("Animal inconnu");
         response.getWriter().close();
         return null;
     }
