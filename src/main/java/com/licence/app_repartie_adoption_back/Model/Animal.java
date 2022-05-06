@@ -15,7 +15,7 @@ public class Animal {
     @Column(name = "id_animal", nullable = false)
     private long idAnimal;
 
-    @Column(name = "nom_animal", nullable = false)
+    @Column(name = "nom_animal", nullable = false, length = 35)
     private String nomAnimal;
 
     @Column(name = "age", nullable = false)

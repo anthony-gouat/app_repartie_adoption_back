@@ -109,7 +109,7 @@ public class AnimalController {
      * @return
      * @throws IOException
      */
-    @PutMapping("/update/{id}")
+    @PutMapping("/{id}")
     public Animal updateAnimal(@Validated @RequestBody Animal animal, @PathVariable(value = "id") Long id, HttpServletResponse response) throws IOException {
 
         Optional<Animal> animalById = ar.findById(id);

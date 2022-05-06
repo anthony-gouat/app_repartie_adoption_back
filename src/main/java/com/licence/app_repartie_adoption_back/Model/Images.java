@@ -23,19 +23,19 @@ public class Images {
     @Column(name = "id_animal", nullable = false)
     private Long idAnimal;
 
-    public Long getId_img() {
+    public Long getIdImage() {
         return idImage;
     }
 
-    public void setId_img(Long id_img) {
-        this.idImage = id_img;
+    public void setIdImage(Long idImage) {
+        this.idImage = idImage;
     }
 
-    public Long getId_animal() {
+    public Long getIdAnimal() {
         return idAnimal;
     }
 
-    public void setId_animal(Long id_animal) {
-        this.idAnimal = id_animal;
+    public void setIdAnimal(Long idAnimal) {
+        this.idAnimal = idAnimal;
     }
 }

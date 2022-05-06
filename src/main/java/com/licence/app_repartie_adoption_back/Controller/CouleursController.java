@@ -3,7 +3,9 @@ package com.licence.app_repartie_adoption_back.Controller;
 import com.licence.app_repartie_adoption_back.CommenterId;
 import com.licence.app_repartie_adoption_back.CouleursId;
 import com.licence.app_repartie_adoption_back.Model.Couleurs;
+import com.licence.app_repartie_adoption_back.Model.Tags;
 import com.licence.app_repartie_adoption_back.Repository.CouleursRepository;
+import com.licence.app_repartie_adoption_back.TagsId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -18,6 +20,11 @@ public class CouleursController {
 
     @Autowired
     private CouleursRepository cr;
+
+    @GetMapping
+    public List<Couleurs> getAllCouleurs(){
+        return (List<Couleurs>) cr.findAll();
+    }
 
     /**
      * Récupère une couleur lié à un animal
@@ -57,6 +64,17 @@ public class CouleursController {
     public void deleteCouleurs(@PathVariable(value = "idAnimal") long idAnimal, @PathVariable(value = "idCouleur") long idCouleur) {
         CouleursId id = new CouleursId(idCouleur, idAnimal);
         cr.deleteById(id);
+    }
+
+    @DeleteMapping("/animal/{idAnimal}")
+    public void deleteCouleursByAnimal(@PathVariable(value = "idAnimal") long idAnimal) {
+        List<Couleurs> listeCouleurs = (List<Couleurs>) cr.findAll();
+        for (Couleurs couleur : listeCouleurs) {
+            if(couleur.getIdAnimal()==idAnimal){
+                CouleursId id = new CouleursId(couleur.getIdCouleur(), idAnimal);
+                cr.deleteById(id);
+            }
+        }
     }
 }
 

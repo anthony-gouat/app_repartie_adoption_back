@@ -2,14 +2,13 @@ package com.licence.app_repartie_adoption_back.Controller;
 
 import com.licence.app_repartie_adoption_back.Model.Image;
 import com.licence.app_repartie_adoption_back.Model.Images;
+import com.licence.app_repartie_adoption_back.Model.Tag;
 import com.licence.app_repartie_adoption_back.Repository.ImageRepository;
 import com.licence.app_repartie_adoption_back.Repository.ImagesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,5 +50,14 @@ public class ImageController {
         return (List<Image>) ir.findAllById(ids);
     }
 
+    /**
+     * Ajoute une image à la base
+     * @param image
+     * @return image
+     */
+    @PostMapping
+    public Image addTag(@Validated @RequestBody Image image) {
+        return ir.save(image);
+    }
 
 }

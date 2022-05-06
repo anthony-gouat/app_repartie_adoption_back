@@ -54,7 +54,7 @@ public class TagController {
     /**
      * Ajoute un tag à la base
      * @param tag
-     * @return
+     * @return tag
      */
     @PostMapping
     public Tag addTag(@Validated @RequestBody Tag tag) {
