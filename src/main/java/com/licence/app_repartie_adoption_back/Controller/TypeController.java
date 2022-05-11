@@ -1,11 +1,11 @@
 package com.licence.app_repartie_adoption_back.Controller;
 
+import com.licence.app_repartie_adoption_back.Model.Tags;
 import com.licence.app_repartie_adoption_back.Model.Type;
 import com.licence.app_repartie_adoption_back.Repository.TypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,4 +23,15 @@ public class TypeController {
     public List<Type> getAllTypes() {
         return (List<Type>) tr.findAll();
     }
+
+    /**
+     * Ajoute un type à la base
+     * @param type
+     * @return
+     */
+    @PostMapping
+    public Type addType(@Validated @RequestBody Type type) {
+        return tr.save(type);
+    }
+
 }

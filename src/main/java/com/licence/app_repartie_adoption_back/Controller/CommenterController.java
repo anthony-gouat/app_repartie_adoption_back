@@ -50,7 +50,7 @@ public class CommenterController {
      * @param idCommentaire
      * @param idAnimal
      */
-    @DeleteMapping("/delete/{idCommentaire}/{idAnimal}")
+    @DeleteMapping("/{idCommentaire}/{idAnimal}")
     public void deleteCommentaire(@PathVariable(value = "idCommentaire") long idCommentaire,@PathVariable(value = "idAnimal") long idAnimal){
         CommenterId id = new CommenterId(idCommentaire,idAnimal);
         cr.deleteById(id);

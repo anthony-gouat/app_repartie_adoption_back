@@ -1,11 +1,11 @@
 package com.licence.app_repartie_adoption_back.Controller;
 
 import com.licence.app_repartie_adoption_back.Model.Race;
+import com.licence.app_repartie_adoption_back.Model.Type;
 import com.licence.app_repartie_adoption_back.Repository.RaceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,4 +23,15 @@ public class RaceController {
     public List<Race> getAllRaces() {
         return (List<Race>) rr.findAll();
     }
+
+    /**
+     * Ajoute une race à la base
+     * @param race
+     * @return
+     */
+    @PostMapping
+    public Race addType(@Validated @RequestBody Race race) {
+        return rr.save(race);
+    }
+
 }
