@@ -32,9 +32,11 @@ INSERT INTO TYPE(libelle_type) VALUES("Chat");
 INSERT INTO TYPE(libelle_type) VALUES("Oiseau");
 
 INSERT INTO ANIMAL(nom_animal, age, id_race, id_type, adopter) VALUES ("Snoopy", 7, 2, 1, false);
-INSERT INTO ANIMAL(nom_animal, age, id_race, id_type, adopter) VALUES ("Symba", 4, 7, 2, false);
-INSERT INTO ANIMAL(nom_animal, age, id_race, id_type, adopter) VALUES ("Symba", 3, 1, 1, false);
-INSERT INTO ANIMAL(nom_animal, age, id_race, id_type, adopter) VALUES ("Symba", 8, 8, 2, true);
+INSERT INTO ANIMAL(nom_animal, age, id_race, id_type, adopter) VALUES ("Clochette", 4, 7, 2, false);
+INSERT INTO ANIMAL(nom_animal, age, id_race, id_type, adopter) VALUES ("Rufus", 3, 1, 1, false);
+INSERT INTO ANIMAL(nom_animal, age, id_race, id_type, adopter) VALUES ("Fender", 8, 8, 2, true);
+INSERT INTO ANIMAL(nom_animal, age, id_race, id_type, adopter) VALUES ("Fodera", 3, 6, 2, false);
+
 
 INSERT INTO COULEURS VALUES (1, 2);
 INSERT INTO COULEURS VALUES (1, 1);
@@ -42,14 +44,17 @@ INSERT INTO COULEURS VALUES (2, 2);
 INSERT INTO COULEURS VALUES (2, 4);
 INSERT INTO COULEURS VALUES (3, 5);
 INSERT INTO COULEURS VALUES (4, 6);
+INSERT INTO COULEURS VALUES (5, 2);
+INSERT INTO COULEURS VALUES (5, 5);
 
 INSERT INTO IMAGES VALUES (1, 1);
 INSERT INTO IMAGES VALUES (2, 1);
 INSERT INTO IMAGES VALUES (3, 1);
-INSERT INTO IMAGES VALUES (4, 2);
-INSERT INTO IMAGES VALUES (5, 3);
-INSERT INTO IMAGES VALUES (6, 3);
-INSERT INTO IMAGES VALUES (7, 3);
+INSERT INTO IMAGES VALUES (7, 5);
+INSERT INTO IMAGES VALUES (4, 3);
+INSERT INTO IMAGES VALUES (5, 2);
+INSERT INTO IMAGES VALUES (6, 2);
+INSERT INTO IMAGES VALUES (7, 2);
 INSERT INTO IMAGES VALUES (8, 4);
 
 INSERT INTO UTILISATEUR(nom_util, prenom_util, mail, mdp, role) VALUES ("MEYER", "Maxime", "maxime.meyer@test.fr", "test", "Administrateur");
